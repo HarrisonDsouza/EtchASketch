@@ -1,0 +1,12 @@
+main .container{
+    height: 300px;
+    width: 300px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+main .container div{
+    box-sizing: border-box;
+    border: 0.1px solid gray;
+}
+

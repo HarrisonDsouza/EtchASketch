@@ -14,7 +14,7 @@ function createBoxes(count){
 }
 
 // paint boxes on click
-function color(){
+function color(option = 'black'){
     let boxes = document.querySelectorAll('main .container > *')
 
     let isDown = false;
@@ -22,7 +22,10 @@ function color(){
 
     for (let box of boxes){
         box.addEventListener('mousedown', () => {
-            box.classList.add('clicked');
+            if(isMixed){//checks if mixed color option is selected
+                option ="#" + Math.floor(Math.random()*16777215).toString(16).padStart(6, '0').toUpperCase();
+            }
+            box.style.backgroundColor = option;
             isDown = true;
         })
     }
@@ -33,12 +36,37 @@ function color(){
     }
     for (let box of boxes){
         box.addEventListener('mouseover', () => {
+            if(isMixed){//checks if mixed color option is selected
+                option ="#" + Math.floor(Math.random()*16777215).toString(16).padStart(6, '0').toUpperCase();
+            }
             if(isDown){
-                box.classList.add('clicked');
+                box.style.backgroundColor = option;
             }
         })
     }
 }
+
+// Drawing options
+
+let black = document.querySelector('main .customization .black');
+let erase = document.querySelector('main .customization .erase');
+let mixed = document.querySelector('main .customization .mixed');
+let isMixed = false
+
+black.addEventListener('click', ()=>{
+    color('black');
+    isMixed = false;
+});
+
+mixed.addEventListener('click', () => {
+    isMixed = true;
+});
+
+erase.addEventListener('click', ()=>{
+    color('transparent');
+    isMixed = false;
+});
+
 
 // Input canvas size from user
 let canvas = document.querySelector('main .container');

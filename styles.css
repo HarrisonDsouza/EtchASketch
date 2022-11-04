@@ -1,6 +1,70 @@
+:root(
+
+)
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+html, body{   
+    min-height: 100%;
+}
+
+main{
+    height:100%;
+    width: 100%;
+    margin: 0px auto;
+    text-align: center;
+}
+
+main .header{
+    padding-top: 30px;
+    margin-bottom: 50px;
+}
+
+main .header h1{
+    font-size: 2.5em;
+}
+
+main .customization{
+    width: 300px;
+    margin: 10px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main .customization > span{
+    flex: 1;
+}
+
+main .customization .modes{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 10px;
+    flex: 3.5;
+}
+
+main .customization .modes > *{
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid gray;
+    cursor:pointer;
+}
+
+/* main .customization .modes > *:hover{
+    color:white;
+    background-color: black;
+} */
+
 main .container{
-    height: 400px;
-    width: 400px;
+    height: 300px;
+    width: 300px;
+    margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
     border: 2px dashed black;
@@ -8,8 +72,60 @@ main .container{
 
 main .container div{
     box-sizing: border-box;
-    /* border: 0.1px solid gray; */
 }
+
+main .slider{
+    width: 300px;
+    margin: 0 auto;
+    border-radius: 0 0 10px 10px;
+}
+
+main .slider .slider-value{
+    padding-top: 10px;
+}
+
+main .slider .field{
+    display: flex;
+    justify-content: center;
+}
+
+main .slider .field .value{
+    width: fit-content;
+}
+main .slider .field input{
+    flex: 0.5;
+}
+
+@media (min-width:650px) {
+    main{
+        width: 650px;
+    }
+    main .customization{
+        width: 500px;
+    }
+
+    main .container{
+        height: 600px;
+        width: 600px;
+    }
+
+    main .slider{
+        width: 400px;
+    }
+}
+
+@media (min-width:850px) {
+
+    main .container{
+        height: 700px;
+        width: 700px;
+    }
+
+}
+
+
+
+
 
 
 

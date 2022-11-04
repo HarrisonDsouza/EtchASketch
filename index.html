@@ -10,24 +10,30 @@
 </head>
 
 <body>
-    <section class="header"></section>
     <main>
+        <section class="header">
+            <h1>Etch-A-Sketch</h11>
+        </section>
         <div class="customization">
-            <div class="black">Black</div>
-            <div class="mixed">Mixed Color</div>
-            <div class="erase">Eraser</div>
+            <span>Mode:</span>
+            <div class="modes">
+                <div class="black">Black</div>
+                <div class="mixed">Mixed Color</div>
+                <div class="gray-scale">Gray Scale</div>
+                <div class="erase">Eraser</div>
+            </div>
         </div>    
         <div class="container">
 
         </div>
         <div class="slider">
             <div class="slider-value">
-                <span>100</span>
+                Canvas size : <span>20x20</span>
             </div>
             <div class="field">
-                <div class="value left">1</div>
+                <div class="value left">1x1</div>
                 <input type="range" min="1" max="50" value="20">
-                <div class="value right">50</div>
+                <div class="value right">50x50</div>
             </div>
         </div>
 

@@ -12,7 +12,7 @@ function createBoxes(count){
         box.style.flexBasis = `${100/side}%`;
     })
 
-    canvasSize.textContent = `${side}x${side}`;
+    canvasSize.textContent = `${side} x ${side}`;
 }   
 
 // paint boxes on click
@@ -60,7 +60,7 @@ function color(option = 'black'){
     }
 }
 
-// Drawing options
+// Drawing modes
 
 let black = document.querySelector('main .customization .black');
 let erase = document.querySelector('main .customization .erase');
@@ -83,7 +83,7 @@ mixed.addEventListener('click', () => {
 grayScale.addEventListener('click', () => {
     isMixed = false;
     isGrayScale = true;
-
+    
 });
 
 erase.addEventListener('click', ()=>{

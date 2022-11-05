@@ -1,16 +1,29 @@
-:root(
+:root{
+    --primary-dark:#772e25;
+    --primary-light: #c44536;
+    --secondary-dark:#283d3b;
+    --secondary-light:#197278;
+    --white: #edddd4;
 
-)
+}
 
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    color: whitesmoke;
+    font-family: 'Amatic SC', cursive;
+
 
 }
 
+
 html, body{   
     min-height: 100%;
+}
+
+body{
+    background-color: var(--primary-dark);
 }
 
 main{
@@ -20,14 +33,20 @@ main{
     text-align: center;
 }
 
+/* Header */
+
 main .header{
     padding-top: 30px;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
 }
 
 main .header h1{
-    font-size: 2.5em;
+    font-family: 'Pacifico', cursive;
+    text-shadow: 6px 6px 5px black;
+    font-size: 2.7em;
 }
+
+/* Modes for drawing */
 
 main .customization{
     width: 300px;
@@ -38,41 +57,61 @@ main .customization{
 }
 
 main .customization > span{
+    text-shadow: 2px 2px black;
+    font-weight: 700;
+    font-size: 2.1em;
+    align-self: start;
     flex: 1;
+
 }
 
 main .customization .modes{
     display: flex;
-    justify-content: space-around;
+    justify-content: start;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 5px;
     flex: 3.5;
 }
 
 main .customization .modes > *{
-    padding: 5px;
+    padding: 7px;
     border-radius: 5px;
-    border: 1px solid gray;
+    text-shadow: 1.5px 1.5px 5px black;
+    border: 1px solid var(--secondary-dark);
+    background-color: var(--secondary-light);
+    box-shadow: 2px 2px 5px black;
     cursor:pointer;
+    font-size: 1.4em;
+    font-weight: 700;
 }
 
-/* main .customization .modes > *:hover{
-    color:white;
-    background-color: black;
-} */
+main .customization .modes > *:hover{
+    background-color: var(--secondary-dark);
+}
+
+main .customization .modes > *.clicked{
+    background-color: var(--secondary-dark);
+}
+
+/* Canvas */
 
 main .container{
     height: 300px;
     width: 300px;
     margin: 0 auto;
+    background-color: var(--white);
     display: flex;
     flex-wrap: wrap;
-    border: 2px dashed black;
+    border: 2px solid var(--primary-light);
+    box-shadow: 2px 2px 5px black;
 }
 
 main .container div{
     box-sizing: border-box;
 }
+
+
+/* Canvas size */
 
 main .slider{
     width: 300px;
@@ -81,17 +120,48 @@ main .slider{
 }
 
 main .slider .slider-value{
+    text-shadow: 1.5px 1.5px black;
     padding-top: 10px;
+    font-weight: 700;
+    font-size: 1.5em;
 }
 
 main .slider .field{
     display: flex;
     justify-content: center;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    font-weight: 700;
+    font-size: 1.2em;
+    gap: 10px;
 }
 
-main .slider .field .value{
-    width: fit-content;
+input[type = 'range']{
+    appearance: none;
+    background-color: transparent;
 }
+
+input[type = 'range']::-webkit-slider-runnable-track{
+    height:7px;
+    border: 1px solid var(--primary-light);
+    border-radius: 25px;
+    background-color: var(--white);
+}
+
+
+input[type = 'range']::-webkit-slider-thumb {
+    appearance: none;
+    width: 20px;
+    height: 15px;
+    border-radius: 25px;
+    margin-top: -6px;
+    background-color: var(--secondary-light);
+}
+
+input[type = 'range']::-webkit-slider-thumb:hover {
+    background-color: var(--secondary-dark);
+}
+
 main .slider .field input{
     flex: 0.5;
 }
@@ -100,8 +170,17 @@ main .slider .field input{
     main{
         width: 650px;
     }
+    main .header h1{
+        text-shadow: 10px 10px 5px black;
+        font-size: 3.5em;
+    }
     main .customization{
         width: 500px;
+    }
+    
+    main .customization .modes{
+
+        gap: 20px;
     }
 
     main .container{
